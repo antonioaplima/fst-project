@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { MeuPrimeiroComponent } from './src/app/meu-primeiro/src/app/meu-primeiro/meu-primeiro.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore'
+import { firebaseConfig } from './key/firebase.key';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { MaterialModule } from './shared/material.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
