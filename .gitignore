@@ -43,4 +43,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Não dar push nas keys do banco de dados
 src/app/key
+

@@ -1,0 +1,25 @@
+<!-- Código html da barra de cima da pag -->
+<!-- -->
+<mat-nav-list>
+    <mat-list-item routerLinkActive="active" *ngFor="let item of navlist">
+        <a [routerLink]="[item.router]">
+            <mat-icon>
+                {{item.icon}}
+            </mat-icon>
+            <span>
+                {{item.label}}
+            </span>
+        </a>
+    </mat-list-item>
+</mat-nav-list>
+
+<!-- Implementado
+<div class="example-button-row">
+    <button mat-button>Cadastro</button>
+    <button mat-button>Primary</button>
+    <button mat-button>Accent</button>
+    <button mat-button>Warn</button>
+    <button mat-button>Disabled</button>
+    <a mat-button href="https://www.google.com/" target="_blank">Google</a>
+  </div>
+-->

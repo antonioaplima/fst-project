@@ -1,0 +1,41 @@
+<main class="container">
+  <mat-toolbar
+    ><!--Barra de "ferramentas ou barra superior que fica fica no layout"-->
+    <span>Logo</span>
+
+    <!--toggle fica altera o estado atual sempre que chamado, nesse caso com click-->
+    <button mat-icon-button (click)="sidenav.toggle()" class="me-auto">
+      <mat-icon>Menu</mat-icon>
+    </button>
+
+    <button mat-button [matMenuTriggerFor]="menu">{{ username }}</button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Alterar senha</button>
+      <button mat-menu-item>Sair</button>
+    </mat-menu>
+
+    <!-- Implementando
+    <div class="example-button-row">
+      <button mat-button>Cadastro</button>
+      <button mat-button>Rocomendações</button>
+      <button mat-button>Contato</button>
+      <button mat-button>Sobre</button>
+      <a mat-button href="https://www.google.com/" target="_blank">Google</a>
+    </div>-->
+    
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+    <mat-sidenav
+      #sidenav
+      [mode]="mobileQuery.matches ? 'side' : 'over'"
+      [opened]="mobileQuery.matches"
+    >
+      <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</main>

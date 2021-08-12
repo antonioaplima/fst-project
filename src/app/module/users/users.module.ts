@@ -5,6 +5,9 @@ import { UsersRoutingModule } from './users-routing.module';
 import { UsersComponent } from './users.component';
 import { FormComponent } from './form/form.component';
 import { UsersService } from './service/users.service';
+import { MatTableModule } from '@angular/material/table';
+import { MaterialModule } from 'src/app/shared/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,8 +16,12 @@ import { UsersService } from './service/users.service';
     FormComponent
   ],
   imports: [
-    CommonModule,
-    UsersRoutingModule
+    CommonModule,//tres necessários para criar formulário
+    FormsModule,
+    ReactiveFormsModule,
+    
+    UsersRoutingModule, 
+    MaterialModule
   ],
   exports:[
     UsersComponent
